@@ -24,39 +24,13 @@
         android:paddingRight="20dp">
 
 
-        <EditText
-            android:id="@+id/loginEmail"
-            android:layout_width="fill_parent"
+        <TextView
+            android:id="@+id/txtView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/hint_email"
-            android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:textColor="#000"
-            android:textColorHint="@color/input_login_hint" />
-
-        <EditText
-            android:id="@+id/loginPassword"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/hint_password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:textColor="#000"
-            android:textColorHint="@color/input_login_hint" />
-
-        <!-- Login Button -->
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:text="@string/btn_register"
-            android:textColor="@color/white" />
+            android:textColor="@android:color/holo_blue_dark"
+            android:textColorHighlight="@android:color/primary_text_dark"
+            android:textSize="30dp" />
 
 
     </LinearLayout>

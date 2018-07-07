@@ -3,19 +3,30 @@ package np.com.shrestha.rojil.formbasics;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
-    String email, password;
+   private String name ="", password ="";
+   private EditText loginName;
+   private Button btnReg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Intent getValues = getIntent();
-        email = getValues.getStringExtra("Name");
-        EditText edView = findViewById(R.id.loginEmail);
-        edView.setText("The passe value is " + email);
+        Intent intent = getIntent();
+        if (intent == null) {
+            return;
+        }
+        name = intent.getStringExtra("qString");
+
+
+        final TextView textView = (TextView)
+                findViewById(R.id.txtView);
+        textView.setText(name);
     }
 }
