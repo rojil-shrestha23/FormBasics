@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,8 +12,8 @@ import android.widget.EditText;
 import np.com.shrestha.rojil.formbasics.utils.ShowToast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    private Button btnRegister;
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private Button btnRegs;
     private EditText edName, edEmail, edPassword;
     private String name, email, password;
 
@@ -26,10 +27,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        btnRegister = findViewById(R.id.btnRegister);
+        btnRegs = findViewById(R.id.btnRegister);
         edName = findViewById(R.id.name);
         edEmail = findViewById(R.id.email);
         edPassword =findViewById(R.id.password);
+        btnRegs.setOnClickListener(this);
 
     }
     private void emptyForm(){
@@ -42,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         name = edName.getText().toString().trim();
         email = edEmail.getText().toString().trim();
         password = edPassword.getText().toString().trim();
-        email = edEmail.getText().toString().trim();
         if (TextUtils.isEmpty(name)) {
             ShowToast.showToast(MainActivity.this, "Name cannot be empty", true);
         } else if (TextUtils.isEmpty(email)) {
@@ -58,9 +59,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        int id = view.getId();
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.putExtra("Email", "email");
-        startActivity(intent);
+        Intent i = new Intent(this, LoginActivity.class);
+
+        final EditText editText1 = (EditText)
+                findViewById(R.id.name);
+        String myString = editText1.getText().toString();
+        i.putExtra("qString", myString);
+        startActivity(i);
     }
 }

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Log In"
+        android:text="LogIn"
         android:textColor="#90c40909"
         android:textSize="33dp"
         android:textStyle="bold" />
@@ -25,19 +25,20 @@
 
 
         <EditText
-            android:id="@+id/loginEmail"
+            android:id="@+id/userName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:hint="@string/hint_email"
-            android:inputType="textEmailAddress"
+            android:hint="@string/hint_name"
+            android:inputType="textCapWords"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="#000"
             android:textColorHint="@color/input_login_hint" />
 
+
         <EditText
-            android:id="@+id/loginPassword"
+            android:id="@+id/password"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -51,7 +52,7 @@
         <!-- Login Button -->
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnLogIn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
