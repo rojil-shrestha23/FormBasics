@@ -25,8 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         name = intent.getStringExtra("qString");
 
 
-        final TextView textView = (TextView)
-                findViewById(R.id.txtView);
-        textView.setText(name);
+        final EditText editText = (EditText)
+                findViewById(R.id.userName);
+        editText.setText(name);
     }
 }
