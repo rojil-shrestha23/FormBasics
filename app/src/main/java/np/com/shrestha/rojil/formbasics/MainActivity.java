@@ -61,10 +61,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         Intent i = new Intent(this, LoginActivity.class);
 
-        final EditText editText1 = (EditText)
-                findViewById(R.id.name);
+        EditText editText1 = (EditText) findViewById(R.id.name);
+
+        EditText editText2 = (EditText) findViewById(R.id.password);
+
         String myString = editText1.getText().toString();
+
+        String enterPassword = editText2.getText().toString();
+
         i.putExtra("qString", myString);
+
+        i.putExtra("masterPassword", enterPassword);
         startActivity(i);
     }
 }

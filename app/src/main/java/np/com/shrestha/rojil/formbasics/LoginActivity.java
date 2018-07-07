@@ -24,9 +24,16 @@ public class LoginActivity extends AppCompatActivity {
         }
         name = intent.getStringExtra("qString");
 
+        password = intent.getStringExtra("masterPassword");
 
-        final EditText editText = (EditText)
-                findViewById(R.id.userName);
+
+
+
+        final EditText editText = (EditText) findViewById(R.id.userName);
+
+        final EditText editPassword = (EditText) findViewById(R.id.logPassword);
+
         editText.setText(name);
+        editPassword.setText(password);
     }
 }
